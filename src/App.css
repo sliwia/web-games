@@ -1,0 +1,28 @@
+.menu-main-view {
+  font-size: 10px;
+}
+
+.container-menu {
+  width: 100%;
+}
+
+.container {
+  width: 96%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+
+  .menu-main-view {
+    font-size: 20px;
+  }
+}
