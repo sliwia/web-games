@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Icon, Modal, message } from 'antd';
-import './TicTacTou.css';
+import './TicTacToe.css';
 
 
-class TicTacTou extends React.Component {
+class TicTacToe extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,37 +16,57 @@ class TicTacTou extends React.Component {
                 '','',''
             ],
             gameEnabled: true,
-            visibleModal: false,
-            winner:''
+            isVisibleModal: false
         }
     };
 
     onFieldClick(index) {
         if (!this.state.gameEnabled) { return };
         if (this.state.board[index] !=="") { message.warning('Uwaga pole jest już zajęte, wybierz ponownie.'); return };
-        let selectedPlayer = this.state.turn % 2 === 0 ? this.state.player1 : this.state.player2;
         let board = this.state.board;
-        board[index] = selectedPlayer;
-        let turn = new Number(this.state.turn) + 1;
+        board[index] = 'X';
         this.setState({
+            turn: this.state.turn + 1,
             board,
-            turn
+
         });
-        this.checkGameStatus(selectedPlayer);
-        this.checkDraw();
+       
+        this.checkGameStatus('X');
+        setTimeout(() => {
+            this.computerTurn();
+        }, 2000);
+        
     }
 
-    checkDraw() {
-        //rozwiązani nr 1
-        if (!!this.state.gameEnabled && this.state.turn>7) {
-            message.info('REMIS! Zresetuj planszę aby zagrać ponownie.');
-        }
+    computerTurn() {
+        if (this.state.gameEnabled){
+            let board = this.state.board;
+        
+            function _getRandomInt() {
+            let min = Math.ceil(0);
+            let max = Math.floor(8);
+        
+            return Math.floor(Math.random() * (max - min -1)) + min;
+            }
+        
+            let computerFieldSelected = _getRandomInt();
+        
+            if (board[computerFieldSelected] === '') {
+            board[computerFieldSelected] = 'O'
+            } else if (this.state.gameEnabled && this.state.board.indexOf('') >= 0) {
+            this.computerTurn();
+            return;
+            } else return;
+            
+            this.setState({
+            turn: this.state.turn + 1,
+            board
+            })
+        
+                this.checkGameStatus('O');
+    }
+      }
 
-        //rozwiązani nr 2
-        // if (!!this.state.board[0] && !!this.state.board[1] && !!this.state.board[2] && !!this.state.board[3] && !!this.state.board[4] && !!this.state.board[5] && !!this.state.board[6] && !!this.state.board[7] && !!this.state.board[8] && !!this.state.gameEnabled ) {
-        //     message.info('REMIS! Zresetuj planszę aby zagrać ponownie.');
-        // }
-    };
 
     checkGameStatus(selectedPlayer) {
         for ( let i=0; i <=6; i=i+3) {
@@ -76,17 +96,33 @@ class TicTacTou extends React.Component {
                 this.endGame(selectedPlayer);
             }
         }
+
+        if (this.state.gameEnabled && this.state.turn>7) {
+            this.endGame(false)
+        }
     }
 
     endGame(selectedPlayer) {
-        let newStatus = false;
-        console.log('newStatus',newStatus)
         this.setState({
-            gameEnabled: newStatus,
-            winner: selectedPlayer,
-            visibleModal: true
-        })
+            gameEnabled: false
+        });
+        setTimeout(() => {
+            if (selectedPlayer) {
+                this.setState({
+                    isVisibleModal: true
+                });
+                this.showModal(selectedPlayer)
+            } else if (this.state.gameEnabled) {
+                message.info('REMIS! Zresetuj planszę aby zagrać ponownie.');  
+            }
+    
+            if (!this.state.gameEnabled) {
+                    return;
+                }
+            }, 1000);
+                
     }
+
 
     resetGame() {
         this.setState({
@@ -97,21 +133,22 @@ class TicTacTou extends React.Component {
                 '','',''
             ],
             gameEnabled: true,
-            visibleModal: false
+            isVisibleModal: false
         })
     };
-    
-    handleOk = () => {
-        this.setState({
-            visibleModal: false,
+
+    showModal = (selectedPlayer) => {
+        Modal.info({
+          content: (
+            <>
+                <div><Icon type="trophy" /> ! BRAWO ! <Icon type="trophy" /> </div>   
+                <div>Wygrał gracz: { selectedPlayer } </div>
+            </>
+          ),
+          onOk() {},
         });
-    };
+    }
     
-    handleCancel = () => {
-        this.setState({
-            visibleModal: false,
-        });
-    };
     
     render() {
         return (
@@ -127,20 +164,10 @@ class TicTacTou extends React.Component {
             </div>
 
             <Button onClick={this.resetGame.bind(this)} type="primary">Reset planszy</Button>
-            
-            <Modal
-                title="Zwycięzca !"
-                visible={this.state.visibleModal}
-                onOk={this.handleOk}
-                onCancel={this.handleCancel}
-            >
-            <div><Icon type="trophy" /> ! BRAWO ! <Icon type="trophy" /> </div>   
-            <div>Wygrał gracz: { this.state.winner } </div>
-            </Modal>
             </>
         );
     }
   
 }
 
-export default TicTacTou;
+export default TicTacToe;

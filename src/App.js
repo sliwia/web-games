@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {Menu, Icon} from 'antd'
 import 'antd/dist/antd.css';
 import './App.css';
-import TicTacTou from './TicTacTou/TicTacTou';
 import HomePage from './HomePage/HomePage';
+import TicTacToe from './TicTacToe/TicTacToe';
+
 
 
 class App extends React.Component {
@@ -21,7 +22,7 @@ class App extends React.Component {
               </Link>
             </Menu.Item>  
             <Menu.Item>
-              <Link to="/tictactou">
+              <Link to="/tictactoe">
                 <Icon type="table" />
                 Gra - kółko krzyżyk
               </Link>
@@ -35,7 +36,7 @@ class App extends React.Component {
 
         <div className="container">
           <Route path="/" exact component={HomePage} />
-          <Route path="/tictactou" component={TicTacTou} />
+          <Route path="/tictactoe" component={TicTacToe} />
         </div>
       </Router>
       </>
