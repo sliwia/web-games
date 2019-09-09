@@ -1,5 +1,6 @@
 .canvas {
     cursor: none;
+    border-radius: 10px;
     left: 100px;
 }
 
