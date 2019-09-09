@@ -18,7 +18,7 @@ class TicTacToe extends React.Component {
             gameEnabled: true,
             isVisibleModal: false,
         }
-        this.computerTurn = this.computerTurn.bind(this);
+        //this.computerTurn = this.computerTurn.bind(this);
     };
 
     onFieldClick(index) {
@@ -64,6 +64,7 @@ class TicTacToe extends React.Component {
         if (this.state.turn !== prevState.turn && this.state.turn % 2 !==0) {
             this.computerTurn()
         }
+        return
     }
 
     checkGameStatus(selectedPlayer) {
