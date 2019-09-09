@@ -18,7 +18,6 @@ class Settings extends React.Component {
     this.setState({ speedValue });
   };
 
-  
 
   render() {
     const speedValue  = this.state.speedValue;

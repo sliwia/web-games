@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider, Icon } from 'antd';
+import { Icon } from 'antd';
 import './PaddleGame.css';
 
 class PaddleGame extends React.Component {
@@ -120,7 +120,7 @@ class PaddleGame extends React.Component {
       <div className="paddle-game-container">
         <div>
           <h1>Aktualny wynik: {this.state.bounces}</h1>
-          <h2>Najlepszy wynik: {this.state.highScore}</h2> 
+          <h2><Icon type="trophy" theme="twoTone" twoToneColor="gold" /> Najlepszy wynik: {this.state.highScore}</h2> 
         </div>
         <canvas ref="canvas" width="800" height="600" className="canvas"></canvas>
       </div>

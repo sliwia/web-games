@@ -32,7 +32,7 @@ class TicTacToe extends React.Component {
 
         })
         this.checkGameStatus('X');
-        this.computerTurn();    
+        //this.computerTurn();    
     }
 
     getRandomInt() {
@@ -58,6 +58,12 @@ class TicTacToe extends React.Component {
             board
             }) 
         this.checkGameStatus('O');      
+    }
+
+    componentDidUpdate(prevProps,prevState) {
+        if (this.state.turn !== prevState.turn && this.state.turn % 2 !==0) {
+            this.computerTurn()
+        }
     }
 
     checkGameStatus(selectedPlayer) {
