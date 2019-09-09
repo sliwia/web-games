@@ -1,38 +1,58 @@
-.game-board {
+.game-board-container {
+  height: 60%;
+}
+
+.game-board { 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 10px;
-
+    margin-top: 5%;
 }
-
+  
 .game-board--field {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32%;
-    height: 24vh;
-    margin-bottom: 2%;
-    background: silver;
-    font-family: 'Comic Sans MS';
-    font-size: 25px;
-    font-weight: bold;
-    cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32%;
+  margin-bottom: 2%;
+  background: #8b8b8b;
+  font-family: 'Comic Sans MS';
+  font-size: 40pt;
+  font-weight: bold;
+  color:#121212;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 2px  2px 2px #a0c8ee;
+}
+  
+.game-board--field--disabled {
+  cursor: not-allowed;
 }
 
 .game-board--field:after {
-    content: "";
-    display:block;
-    padding: 100%;
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
-/* @media screen and (min-width: 768px) {
-    
-} */
+.ant-btn-primary {
+  color: #fff;
+  background-color: rgba(51, 50, 50, 0.5);
+  border-color: gray;
+  box-shadow: 1px 1px 1px #a0c8ee;
+  
+}
+
+.ant-btn-primary:hover {
+  color:rgb(41, 40, 40);
+  background-color: #a0c8ee8f;
+  
+}
+
   
 @media screen and (min-width: 1200px) {
     .game-board--field:hover {
-        background: gray;
-    }
+        background: rgb(163, 162, 162);
+      }
 }

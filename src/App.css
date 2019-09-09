@@ -1,28 +1,37 @@
-.menu-main-view {
-  font-size: 10px;
-}
-
-.container-menu {
-  width: 100%;
+body {
+  background: #121212;
 }
 
 .container {
-  width: 96%;
   margin: 0 auto;
+  width: 960px;
+  width: 80vh
 }
 
-@media screen and (min-width: 768px) {
-  .container {
-    width: 720px;
-  }
+.menu-main-view {
+  font-size: 18px;
+  background: #323232;
 }
 
-@media screen and (min-width: 1200px) {
-  .container {
-    width: 960px;
-  }
-
-  .menu-main-view {
-    font-size: 20px;
-  }
+.ant-menu-horizontal {
+  display: flex;
+  justify-content: center;
+  line-height: 50px;
+  border-bottom: 2px solid #e8e8e8;
 }
+
+.ant-menu-horizontal > .ant-menu-item > a {
+  margin: 0 28px;
+  color: #8b8b8b;
+}
+
+.ant-menu-horizontal > .ant-menu-item-selected > a {
+  color: white;
+  font-weight: 500;
+}
+
+.ant-menu-item-selected > a, .ant-menu-item-selected > a:hover {
+  color: #89bdee;
+}
+
+

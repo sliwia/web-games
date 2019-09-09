@@ -16,8 +16,9 @@ class TicTacToe extends React.Component {
                 '','',''
             ],
             gameEnabled: true,
-            isVisibleModal: false
+            isVisibleModal: false,
         }
+        this.computerTurn = this.computerTurn.bind(this);
     };
 
     onFieldClick(index) {
@@ -29,44 +30,35 @@ class TicTacToe extends React.Component {
             turn: this.state.turn + 1,
             board,
 
-        });
-       
+        })
         this.checkGameStatus('X');
-        setTimeout(() => {
-            this.computerTurn();
-        }, 2000);
-        
+        this.computerTurn();    
+    }
+
+    getRandomInt() {
+        let min = Math.ceil(0);
+        let max = Math.floor(8);
+    
+        return Math.floor(Math.random() * (max - min -1)) + min;
     }
 
     computerTurn() {
-        if (this.state.gameEnabled){
-            let board = this.state.board;
+        let board = this.state.board;
+        let computerFieldSelected = this.getRandomInt();
+    
+        if (board[computerFieldSelected] === '') {
+        board[computerFieldSelected] = 'O'
+        } else if (this.state.gameEnabled && this.state.board.indexOf('') >= 0) {
+        this.computerTurn();
+        return;
+        } else return;
         
-            function _getRandomInt() {
-            let min = Math.ceil(0);
-            let max = Math.floor(8);
-        
-            return Math.floor(Math.random() * (max - min -1)) + min;
-            }
-        
-            let computerFieldSelected = _getRandomInt();
-        
-            if (board[computerFieldSelected] === '') {
-            board[computerFieldSelected] = 'O'
-            } else if (this.state.gameEnabled && this.state.board.indexOf('') >= 0) {
-            this.computerTurn();
-            return;
-            } else return;
-            
-            this.setState({
+        this.setState({
             turn: this.state.turn + 1,
             board
-            })
-        
-                this.checkGameStatus('O');
+            }) 
+        this.checkGameStatus('O');      
     }
-      }
-
 
     checkGameStatus(selectedPlayer) {
         for ( let i=0; i <=6; i=i+3) {
@@ -102,13 +94,12 @@ class TicTacToe extends React.Component {
         }
     }
 
-    endGame(selectedPlayer) {
-        this.setState({
-            gameEnabled: false
-        });
-        setTimeout(() => {
+    endGame (selectedPlayer) {
+            this.setState({
+                gameEnabled: false
+            })
             if (selectedPlayer) {
-                this.setState({
+                 this.setState({
                     isVisibleModal: true
                 });
                 this.showModal(selectedPlayer)
@@ -119,12 +110,11 @@ class TicTacToe extends React.Component {
             if (!this.state.gameEnabled) {
                     return;
                 }
-            }, 1000);
-                
-    }
-
+            }
+  
 
     resetGame() {
+        console.log('reset');
         this.setState({
             turn: 0,
             board: [
@@ -135,6 +125,7 @@ class TicTacToe extends React.Component {
             gameEnabled: true,
             isVisibleModal: false
         })
+        
     };
 
     showModal = (selectedPlayer) => {
@@ -152,19 +143,23 @@ class TicTacToe extends React.Component {
     
     render() {
         return (
-            <>
-            <div className="game-board">
-                {
-                    this.state.board.map((field,key) => {
-                        return <div className="game-board--field" key={key} onClick={this.onFieldClick.bind(this,key)}>
-                            <div className="game-board--content">{field}</div>
-                        </div>
-                    })
-                }
-            </div>
 
-            <Button onClick={this.resetGame.bind(this)} type="primary">Reset planszy</Button>
-            </>
+            <div className="game-board-container">
+                <div className="container">
+                    <div className="game-board">
+                        {
+                            this.state.board.map((field,key) => {
+                                return <div className="game-board--field" key={key} onClick={this.onFieldClick.bind(this,key)}>
+                                    <div className="game-board--content">{field}</div>
+                                </div>
+                            })
+                        }
+                    </div>
+
+                    <Button onClick={this.resetGame.bind(this)} type="primary">Reset planszy</Button>
+                </div>
+            </div>
+            
         );
     }
   

@@ -1,13 +1,12 @@
 import React from 'react';
-import { Icon } from 'antd';
+import './HomePage.css'
 
 
 class HomePage extends React.Component {
     render() {
         return (
-            <>
-            <h1>Witaj na stronie <Icon type="smile" /> </h1>
-            </>
+            <div className="home-container">
+            </div>
         );
     }
   

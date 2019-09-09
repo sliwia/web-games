@@ -5,6 +5,8 @@ import 'antd/dist/antd.css';
 import './App.css';
 import HomePage from './HomePage/HomePage';
 import TicTacToe from './TicTacToe/TicTacToe';
+import PaddleGame from './PaddleGame/PaddleGame'
+import Settings from './Settings/Settings';
 
 
 
@@ -27,17 +29,27 @@ class App extends React.Component {
                 Gra - kółko krzyżyk
               </Link>
             </Menu.Item>
-            <Menu.Item disabled>
-                <Icon type="lock" />
-                Niespodzianka
+            <Menu.Item >
+              <Link to="/paddlegame">
+                <Icon type="dribbble" />
+                Gra - Piłka
+              </Link>
+            </Menu.Item>
+            <Menu.Item >
+              <Link to="/settings">
+                <Icon type="setting" />
+                Ustawienia
+              </Link>
             </Menu.Item>
           </Menu>
         </div>
 
-        <div className="container">
-          <Route path="/" exact component={HomePage} />
-          <Route path="/tictactoe" component={TicTacToe} />
-        </div>
+        
+        <Route path="/" exact component={ HomePage } />
+        <Route path="/tictactoe" component={ TicTacToe } />
+        <Route path="/paddlegame" component={ PaddleGame } />
+        <Route path="/settings" component={ Settings } />
+
       </Router>
       </>
     );
