@@ -4,9 +4,20 @@
     left: 100px;
 }
 
+.canvas-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+
+}
+
 .paddle-game-container {
     display: flex;
     flex-wrap: wrap;
+    height: 92vh;
     justify-content: space-between;
     padding: 1% 23% 2% 2%; 
 }
@@ -14,4 +25,11 @@
 
 .paddle-game-container h1, h2 {
     color: white;
+}
+
+.btn-full-screen {
+    position: fixed;
+    top: 65px;
+    right: 10px;
+    font-size: 20px;
 }

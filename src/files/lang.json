@@ -1,0 +1,34 @@
+{
+    "pl": {
+        "menuHome": "Strona główna",
+        "menuTicTacToe": "Kółko krzyżyk",
+        "menuPaddleGame": "Paletka",
+        "menuSettings": "Ustawienia",
+        "homeTitle": "Witaj na platformie gier!",
+        "resetGameButton": "Reset gry",
+        "drawGameMessageInfo": "REMIS! Zresetuj planszę aby zagrać ponownie.",
+        "seatTakenMessageWarning":"Pole jest już zajęte, wybierz ponownie.",
+        "winnerGameMessageInfoPart1":"! GRATULACJE !",
+        "winnerGameMessageInfoPart2":"Wygrał gracz:",
+        "currentScoreTitle":"Aktualny wynik:",
+        "highestScoreTitle":"Najwyższy wynik:",
+        "defaultSettingsButton":"Przywróć ustawienia domyślne",
+        "speedGameTitle":"Prędkość gry"
+    },
+    "en": {
+        "menuHome": "Home Page",
+        "menuTicTacToe": "Tic Tac Tou",
+        "menuPaddleGame": "Paddle Game",
+        "menuSettings": "Settings",
+        "homeTitle": "Welcome to the platform games!",
+        "resetGameButton": "Reset game",
+        "drawGameMessageInfo": "DRAW! You reset the game and start again.",
+        "seatTakenMessageWarning":"This seat is taken, choose again.",
+        "winnerGameMessageInfoPart1":"! CONGRATULATIONS !",
+        "winnerGameMessageInfoPart2":"The winner is:",
+        "currentScoreTitle":"Current Score:",
+        "highestScoreTitle":"The Highest Score:",
+        "defaultSettingsButton":"Restore default settings",
+        "speedGameTitle":"Game speed"
+    }
+}

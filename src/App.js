@@ -1,17 +1,34 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import {Menu, Icon} from 'antd'
+import {Menu, Icon, Radio} from 'antd'
 import 'antd/dist/antd.css';
 import './App.css';
 import HomePage from './HomePage/HomePage';
 import TicTacToe from './TicTacToe/TicTacToe';
 import PaddleGame from './PaddleGame/PaddleGame'
 import Settings from './Settings/Settings';
-
+import lang from '../src/files/lang.json';
 
 
 class App extends React.Component {
+  constructor() {
+    super();
+
+    if (!localStorage.getItem('lang')) {
+      localStorage.setItem('lang', 'en');
+    }
+    this.state = {
+      lang: null
+    }
+  }
+
+  setLang(lang) {
+    localStorage.setItem('lang', lang);
+    this.setState({lang});
+  }
+
   render() {
+    
     return (
       <>
       <Router>
@@ -20,25 +37,25 @@ class App extends React.Component {
             <Menu.Item>
               <Link to="/">
                 <Icon type="home" />
-                Strona główna
+                {lang[localStorage.getItem('lang')].menuHome}
               </Link>
             </Menu.Item>  
             <Menu.Item>
               <Link to="/tictactoe">
                 <Icon type="table" />
-                Gra - kółko krzyżyk
+                {lang[localStorage.getItem('lang')].menuTicTacToe}
               </Link>
             </Menu.Item>
             <Menu.Item >
               <Link to="/paddlegame">
                 <Icon type="dribbble" />
-                Gra - Piłka
+                {lang[localStorage.getItem('lang')].menuPaddleGame}
               </Link>
             </Menu.Item>
             <Menu.Item >
               <Link to="/settings">
                 <Icon type="setting" />
-                Ustawienia
+                {lang[localStorage.getItem('lang')].menuSettings}
               </Link>
             </Menu.Item>
           </Menu>
@@ -49,8 +66,14 @@ class App extends React.Component {
         <Route path="/tictactoe" component={ TicTacToe } />
         <Route path="/paddlegame" component={ PaddleGame } />
         <Route path="/settings" component={ Settings } />
-
       </Router>
+
+      <div className="lang-radio-group">
+        <Radio.Group defaultValue="a" size="small">
+              <Radio.Button value="pl" onClick={this.setLang.bind(this, 'pl')}>PL</Radio.Button>
+              <Radio.Button value="en" onClick={this.setLang.bind(this, 'en')}>EN</Radio.Button>
+        </Radio.Group>
+      </div>
       </>
     );
   }

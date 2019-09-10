@@ -34,4 +34,25 @@ body {
   color: #89bdee;
 }
 
+.lang-radio-group {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+.ant-radio-button-wrapper  {
+  color: #fff;
+  background-color: rgba(51, 50, 50, 0.5);
+  border: none;
+  box-shadow: 1px 1px 1px #a0c8ee;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  color:black;
+  background-color: rgba(255, 244, 244, 0.767);
+  border-color: #1890ff;
+  -webkit-box-shadow: 2px 0 0 0 #1890ff;
+  box-shadow: 2px 0 0 0 #1890ff;
+
+}
+
 

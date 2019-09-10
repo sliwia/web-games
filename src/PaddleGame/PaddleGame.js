@@ -1,6 +1,7 @@
 import React from 'react';
-import { Icon } from 'antd';
+import { Icon, Button } from 'antd';
 import './PaddleGame.css';
+import lang from '../files/lang.json';
 
 class PaddleGame extends React.Component {
   constructor() {
@@ -24,10 +25,8 @@ class PaddleGame extends React.Component {
       gameRefreshInterval: null,
       bounces: 0,
       highScore: highScore,
-      speedValue: 0
-      
+      isFullScreen: false
     }
-
     this.updateAll = this.updateAll.bind(this);
     this.updateMousePosition = this.updateMousePosition.bind(this);
   }
@@ -35,7 +34,8 @@ class PaddleGame extends React.Component {
   componentDidMount() {
     this.game.gameBoard = this.refs.canvas;
     this.game.context = this.refs.canvas.getContext('2d');
-    this.setState({gameRefreshInterval: setInterval(this.updateAll, 1000/30)});
+    let speedValue = localStorage.getItem('gameSpeed'); //czy tu dać Number () ?
+    this.setState({gameRefreshInterval: setInterval(this.updateAll, 1000/speedValue)});
     this.refs.canvas.addEventListener('mousemove', this.updateMousePosition)
   }
 
@@ -115,14 +115,30 @@ class PaddleGame extends React.Component {
     this.game.ballY = this.game.gameBoard.height / 4;
   }
 
+  toggleFullScreen() {
+    this.setState({
+      isFullScreen: !this.state.isFullScreen
+    })
+  }
+
   render() {
     return (
       <div className="paddle-game-container">
+        <Button 
+        onClick={this.toggleFullScreen.bind(this)}
+        className="btn-full-screen"
+        type="primary"><Icon type="fullscreen" /></Button>
         <div>
-          <h1>Aktualny wynik: {this.state.bounces}</h1>
-          <h2><Icon type="trophy" theme="twoTone" twoToneColor="gold" /> Najlepszy wynik: {this.state.highScore}</h2> 
+          <h1>{ lang[localStorage.getItem('lang')].currentScoreTitle } {this.state.bounces}</h1>
+          <h2><Icon type="trophy" theme="twoTone" twoToneColor="gold" /> { lang[localStorage.getItem('lang')].highestScoreTitle } {this.state.highScore}</h2> 
         </div>
-        <canvas ref="canvas" width="800" height="600" className="canvas"></canvas>
+        <canvas 
+          onDoubleClick={this.toggleFullScreen.bind(this)}
+          className={this.state.isFullScreen ? "canvas canvas-full-screen": "canvas"}
+          ref="canvas" 
+          width="800" 
+          height="600"
+        ></canvas>
       </div>
     );
   } 
