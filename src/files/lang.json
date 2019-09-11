@@ -14,7 +14,8 @@
         "highestScoreTitle":"Najwyższy wynik:",
         "fullScreenTooltip":"Pełny ekran",
         "defaultSettingsButton":"Przywróć ustawienia domyślne",
-        "speedGameTitle":"Prędkość gry"
+        "speedGameTitle":"Prędkość gry",
+        "languageTooltip": "Język"
     },
     "en": {
         "menuHome": "Home Page",
@@ -31,6 +32,7 @@
         "highestScoreTitle":"The Highest Score:",
         "fullScreenTooltip":"Full screen",
         "defaultSettingsButton":"Restore default settings",
-        "speedGameTitle":"Game speed"
+        "speedGameTitle":"Game speed",
+        "languageTooltip": "Language"
     }
 }

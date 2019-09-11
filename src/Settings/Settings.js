@@ -28,7 +28,6 @@ class Settings extends React.Component {
 
 
   render() {
-    const speedValue  = this.state.speedValue;
     return (
       <div className="settings-container">
         <h1>Ustawiania gry - kółko krzyżyk</h1>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import {Menu, Icon, Radio} from 'antd'
+import {Menu, Icon, Radio, Tooltip} from 'antd'
 import 'antd/dist/antd.css';
 import './App.css';
 import HomePage from './HomePage/HomePage';
@@ -68,12 +68,14 @@ class App extends React.Component {
         <Route path="/settings" component={ Settings } />
       </Router>
 
-      <div className="lang-radio-group">
-        <Radio.Group defaultValue="a" size="small">
-              <Radio.Button value="pl" onClick={this.setLang.bind(this, 'pl')}>PL</Radio.Button>
-              <Radio.Button value="en" onClick={this.setLang.bind(this, 'en')}>EN</Radio.Button>
-        </Radio.Group>
-      </div>
+      <Tooltip placement="top" title={lang[localStorage.getItem('lang')].languageTooltip}>
+        <div className="lang-radio-group">
+          <Radio.Group defaultValue="a" size="small">
+                <Radio.Button value="pl" onClick={this.setLang.bind(this, 'pl')}>PL</Radio.Button>
+                <Radio.Button value="en" onClick={this.setLang.bind(this, 'en')}>EN</Radio.Button>
+          </Radio.Group>
+        </div>
+      </Tooltip>
       </>
     );
   }
