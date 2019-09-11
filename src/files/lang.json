@@ -12,6 +12,7 @@
         "winnerGameMessageInfoPart2":"Wygrał gracz:",
         "currentScoreTitle":"Aktualny wynik:",
         "highestScoreTitle":"Najwyższy wynik:",
+        "fullScreenTooltip":"Pełny ekran",
         "defaultSettingsButton":"Przywróć ustawienia domyślne",
         "speedGameTitle":"Prędkość gry"
     },
@@ -28,6 +29,7 @@
         "winnerGameMessageInfoPart2":"The winner is:",
         "currentScoreTitle":"Current Score:",
         "highestScoreTitle":"The Highest Score:",
+        "fullScreenTooltip":"Full screen",
         "defaultSettingsButton":"Restore default settings",
         "speedGameTitle":"Game speed"
     }

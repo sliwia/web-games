@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Button } from 'antd';
+import { Icon, Button, Tooltip } from 'antd';
 import './PaddleGame.css';
 import lang from '../files/lang.json';
 
@@ -124,10 +124,13 @@ class PaddleGame extends React.Component {
   render() {
     return (
       <div className="paddle-game-container">
-        <Button 
-        onClick={this.toggleFullScreen.bind(this)}
-        className="btn-full-screen"
-        type="primary"><Icon type="fullscreen" /></Button>
+        <Tooltip placement="bottom" title={lang[localStorage.getItem('lang')].fullScreenTooltip}>
+          <Button 
+          onClick={this.toggleFullScreen.bind(this)}
+          className="btn-full-screen"
+          type="primary"><Icon type="fullscreen" />
+          </Button>
+        </Tooltip>
         <div>
           <h1>{ lang[localStorage.getItem('lang')].currentScoreTitle } {this.state.bounces}</h1>
           <h2><Icon type="trophy" theme="twoTone" twoToneColor="gold" /> { lang[localStorage.getItem('lang')].highestScoreTitle } {this.state.highScore}</h2> 
