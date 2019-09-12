@@ -8,6 +8,7 @@ class PaddleGame extends React.Component {
     super();
 
     this.game = {
+      gameSpeed: 1000,
       gameBoard: null,
       context: null,
       ballX: 100,
@@ -27,6 +28,15 @@ class PaddleGame extends React.Component {
       highScore: highScore,
       isFullScreen: false
     }
+
+    if (localStorage.getItem('highScore') > 10 && localStorage.getItem('highScore') < 20) {
+      this.game.gameSpeed = 500
+    }
+
+    if (localStorage.getItem('highScore') > 20) {
+      this.game.gameSpeed = 250
+    }
+
     this.updateAll = this.updateAll.bind(this);
     this.updateMousePosition = this.updateMousePosition.bind(this);
   }
@@ -34,8 +44,8 @@ class PaddleGame extends React.Component {
   componentDidMount() {
     this.game.gameBoard = this.refs.canvas;
     this.game.context = this.refs.canvas.getContext('2d');
-    let speedValue = localStorage.getItem('gameSpeed'); //czy tu dać Number () ?
-    this.setState({gameRefreshInterval: setInterval(this.updateAll, 1000/speedValue)});
+    let speedValue = localStorage.getItem('gameSpeed'); 
+    this.setState({gameRefreshInterval: setInterval(this.updateAll, this.game.gameSpeed/speedValue)});
     this.refs.canvas.addEventListener('mousemove', this.updateMousePosition)
   }
 
@@ -121,7 +131,43 @@ class PaddleGame extends React.Component {
     })
   }
 
+  startStopGame() {
+    if (!this.state.gameRefreshInterval) {
+      this.setState({gameRefreshInterval: setInterval(this.updateAll, this.game.gameSpeed/30)});
+    } else {
+      clearInterval(this.state.gameRefreshInterval);
+      this.setState({gameRefreshInterval: null})
+    }
+  }
+
+  resetScore() {
+    localStorage.setItem('highScore', '0');
+    this.setState({
+      bounces: 0,
+      highScore:0
+    })
+  }
+
+
   render() {
+    let startStopGameBtn;
+
+    if (!this.state.gameRefreshInterval) {
+      startStopGameBtn = <Button 
+        className="btn-start-stop-reset" 
+        type="primary" 
+        onClick={this.startStopGame.bind(this)}>
+          <Icon type="play-circle" />{lang[localStorage.getItem('lang')].startButton}
+      </Button>
+    } else {
+      startStopGameBtn = <Button 
+        className="btn-start-stop-reset" 
+        type="primary" 
+        onClick ={this.startStopGame.bind(this)}>
+          <Icon type="pause-circle" />{lang[localStorage.getItem('lang')].stopButton}
+        </Button>
+    }
+
     return (
       <div className="paddle-game-container">
         <Tooltip placement="bottom" title={lang[localStorage.getItem('lang')].fullScreenTooltip}>
@@ -134,6 +180,12 @@ class PaddleGame extends React.Component {
         <div>
           <h1>{ lang[localStorage.getItem('lang')].currentScoreTitle } {this.state.bounces}</h1>
           <h2><Icon type="trophy" theme="twoTone" twoToneColor="gold" /> { lang[localStorage.getItem('lang')].highestScoreTitle } {this.state.highScore}</h2> 
+          {startStopGameBtn}
+          <Button 
+            type="primary" 
+            className="btn-start-stop-reset" 
+            onClick={this.resetScore.bind(this)}>{lang[localStorage.getItem('lang')].resetGameButton}
+          </Button>
         </div>
         <canvas 
           onDoubleClick={this.toggleFullScreen.bind(this)}

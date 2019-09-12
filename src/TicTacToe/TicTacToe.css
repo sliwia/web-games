@@ -1,12 +1,12 @@
 .game-board-container {
   height: 60%;
+  margin-top: 10px;
 }
 
 .game-board { 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 5%;
 }
   
 .game-board--field {

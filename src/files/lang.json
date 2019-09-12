@@ -12,8 +12,11 @@
         "winnerGameMessageInfoPart2":"Wygrał gracz:",
         "currentScoreTitle":"Aktualny wynik:",
         "highestScoreTitle":"Najwyższy wynik:",
+        "startButton":"Start gry",
+        "stopButton":"Stop gry",
         "fullScreenTooltip":"Pełny ekran",
         "defaultSettingsButton":"Przywróć ustawienia domyślne",
+        "settingsPaddleGameTitle":"Ustawienia - Paletka",
         "speedGameTitle":"Prędkość gry",
         "languageTooltip": "Język"
     },
@@ -30,8 +33,11 @@
         "winnerGameMessageInfoPart2":"The winner is:",
         "currentScoreTitle":"Current Score:",
         "highestScoreTitle":"The Highest Score:",
+        "startButton":"Start game",
+        "stopButton":"Stop game",
         "fullScreenTooltip":"Full screen",
         "defaultSettingsButton":"Restore default settings",
+        "settingsPaddleGameTitle":"Settings - Paddle Game",
         "speedGameTitle":"Game speed",
         "languageTooltip": "Language"
     }

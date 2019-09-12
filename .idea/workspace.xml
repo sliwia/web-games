@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad0c1d7e-5683-4387-90e2-a542aa42ad52" name="Default Changelist" comment="Próba naprawienia błędu w kółko krzyżyk 2">
-      <change afterPath="$PROJECT_DIR$/src/files/lang.json" afterDir="false" />
+    <list default="true" id="ad0c1d7e-5683-4387-90e2-a542aa42ad52" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HomePage/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomePage/HomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomePage/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PaddleGame/PaddleGame.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaddleGame/PaddleGame.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PaddleGame/PaddleGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaddleGame/PaddleGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Settings/Settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings/Settings.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Settings/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings/Settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TicTacToe.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TicTacToe.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToe/TicTacToe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TicTacToe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/files/lang.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/files/lang.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +25,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="liwia_szajner &lt;liwia.szajner@gmail.com&gt;" />
         <option value="Liwia &lt;liwia.szajner@gmail.com&gt;" />
+        <option value="liwia_szajner &lt;liwia.szajner@gmail.com&gt;" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,12 +53,6 @@
               <item name="web-games" type="b2602c69:ProjectViewProjectNode" />
               <item name="web-games" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-games" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-games" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="web-games" type="b2602c69:ProjectViewProjectNode" />
@@ -148,13 +142,34 @@
       <option name="project" value="LOCAL" />
       <updated>1568040049597</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Dodane: full screen, tłumacznia(ale jeszcze do sprawdzenia), ustawienia prędkości gry, poprawione kółko krzyżyk">
+      <created>1568138814862</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1568138814862</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Dodany tooltip do full screena">
+      <created>1568210032075</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1568210032075</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Dodany tooltip do wyboru języka">
+      <created>1568211969595</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1568211969595</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -164,8 +179,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.12111293" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.5139116" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -220,7 +235,10 @@
     <MESSAGE value="Dodny border-radius do canvasa" />
     <MESSAGE value="Próba naprawienia błędu w kółko krzyżyk" />
     <MESSAGE value="Próba naprawienia błędu w kółko krzyżyk 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Próba naprawienia błędu w kółko krzyżyk 2" />
+    <MESSAGE value="Dodane: full screen, tłumacznia(ale jeszcze do sprawdzenia), ustawienia prędkości gry, poprawione kółko krzyżyk" />
+    <MESSAGE value="Dodany tooltip do full screena" />
+    <MESSAGE value="Dodany tooltip do wyboru języka" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodany tooltip do wyboru języka" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/TicTacTou/TicTacTou.js" />
