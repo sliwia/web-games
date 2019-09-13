@@ -1,3 +1,14 @@
+.paddle-game-container {
+    display: flex;
+    justify-content: space-between;
+    height: 92vh;
+    padding: 10px 23% 2% 2%; 
+}
+
+.paddle-game-container h1, h2 {
+    color: white;
+}
+
 .canvas {
     cursor: none;
     border-radius: 10px;
@@ -14,19 +25,6 @@
 
 }
 
-.paddle-game-container {
-    display: flex;
-    flex-wrap: wrap;
-    height: 92vh;
-    justify-content: space-between;
-    padding: 10px 23% 2% 2%; 
-}
-
-
-.paddle-game-container h1, h2 {
-    color: white;
-}
-
 .btn-full-screen {
     position: fixed;
     top: 65px;
@@ -34,7 +32,7 @@
     font-size: 20px;
 }
 
-.btn-start-stop-reset{
+.btn-start-stop-reset {
     display: block;
     width: 220px;
     margin-bottom: 10px;

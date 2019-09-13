@@ -14,9 +14,17 @@ class App extends React.Component {
   constructor() {
     super();
 
-    if (!localStorage.getItem('lang')) {
+    let langs = [
+      'en',
+      'pl'
+    ]
+    
+    if (!localStorage.getItem('lang') || 
+    typeof localStorage.getItem('lang') !== 'string' ||
+    langs.indexOf(localStorage.getItem('lang') ===-1)) {
       localStorage.setItem('lang', 'en');
     }
+
     this.state = {
       lang: null
     }
@@ -60,8 +68,7 @@ class App extends React.Component {
             </Menu.Item>
           </Menu>
         </div>
-
-        
+            
         <Route path="/" exact component={ HomePage } />
         <Route path="/tictactoe" component={ TicTacToe } />
         <Route path="/paddlegame" component={ PaddleGame } />
