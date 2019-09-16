@@ -23,10 +23,10 @@ class Settings extends React.Component {
   setDefaultSettings(){
     localStorage.setItem("highScore", 0);
     localStorage.setItem('gameSpeed', 30);
-    localStorage.setItem('numberOfPlayers', 'onePlayer')
+    //localStorage.setItem('numberOfPlayers', 'onePlayer')
     this.setState({ 
       speedValue:30,
-      numberOfPlayers: 'onePlayer'
+      //numberOfPlayers: 'onePlayer'
     });
 
   }

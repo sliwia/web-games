@@ -26,9 +26,9 @@ class TicTacToe extends React.Component {
         let nbOfPlayer = localStorage.getItem('numberOfPlayers');
         console.log('nbOfPlayer: ',nbOfPlayer)
         if (nbOfPlayer==='onePlayer') {
-            this.onFieldClickOnePlayer(index)
+            this.onFieldClickOnePlayer(index);
         } else {
-            this.onFieldClickTwoPlayers(index)
+            this.onFieldClickTwoPlayers(index);
         }
     }
 
@@ -60,7 +60,6 @@ class TicTacToe extends React.Component {
         });
         this.checkGameStatus(selectedPlayer);
     }
-
 
     computerTurn() {
         let { board } = this.state

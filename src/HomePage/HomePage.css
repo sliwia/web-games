@@ -1,19 +1,17 @@
 .home-container {
-    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
     height: 92vh;
     background-image: url('../img/tlo2.jpg');
     background-size: cover;
-    background-position: top;
 }
 
 .home-container h1 {
-    position: absolute;
-    bottom: 40px;
-    left: 180px;
-    padding-right: 5%;
     font-size: 18px; 
     font-style: italic; 
     font-size: 50px; 
     color:white;
     text-shadow: 1px 1px 5px black;
+    margin: 0 150px 50px 150px;
 }
