@@ -33,9 +33,7 @@ class TicTacToe extends React.Component {
     }
 
     async onFieldClickOnePlayer(index) {
-    }
-
-    onFieldClickTwoPlayers(index) {        if (!this.state.gameEnabled) { return };
+        if (!this.state.gameEnabled) { return };
         if (this.state.board[index] !== '') { message.warning(lang[localStorage.getItem('lang')].seatTakenMessageWarning); return };
 
         let board = this.state.board;
@@ -47,7 +45,9 @@ class TicTacToe extends React.Component {
         }, this.computerTurn)
 
         this.checkGameStatus('X');
+    }
 
+    onFieldClickTwoPlayers(index) {
         if (!this.state.gameEnabled) { return };
         if (this.state.board[index] !=="") { message.warning(lang[localStorage.getItem('lang')].seatTakenMessageWarning); return };
         let selectedPlayer = this.state.turn % 2 === 0 ? this.state.player1 : this.state.player2;
