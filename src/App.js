@@ -36,7 +36,7 @@ class App extends React.Component {
   }
 
   render() {
-    
+    let defaultValue = localStorage.getItem('lang')
     return (
       <>
       <Router>
@@ -77,7 +77,7 @@ class App extends React.Component {
 
       <Tooltip placement="top" title={lang[localStorage.getItem('lang')].languageTooltip}>
         <div className="lang-radio-group">
-          <Radio.Group defaultValue="a" size="small">
+          <Radio.Group defaultValue={defaultValue} size="small">
                 <Radio.Button value="pl" onClick={this.setLang.bind(this, 'pl')}>PL</Radio.Button>
                 <Radio.Button value="en" onClick={this.setLang.bind(this, 'en')}>EN</Radio.Button>
           </Radio.Group>

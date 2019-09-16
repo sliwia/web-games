@@ -13,6 +13,7 @@
     cursor: none;
     border-radius: 10px;
     left: 100px;
+    z-index: 1;
 }
 
 .canvas-full-screen {

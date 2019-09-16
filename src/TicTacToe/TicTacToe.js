@@ -8,6 +8,8 @@ class TicTacToe extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            player1: 'O',
+            player2: 'X',
             turn: 0,
             board: [
                 '','','',
@@ -20,7 +22,17 @@ class TicTacToe extends React.Component {
         this.computerTurn = this.computerTurn.bind(this);
     };
 
-    async onFieldClick(index) {
+    selectGameMode (index) {
+        let nbOfPlayer = localStorage.getItem('numberOfPlayers');
+        console.log('nbOfPlayer: ',nbOfPlayer)
+        if (nbOfPlayer==='onePlayer') {
+            this.onFieldClickOnePlayer(index)
+        } else {
+            this.onFieldClickTwoPlayers(index)
+        }
+    }
+
+    async onFieldClickOnePlayer(index) {
         if (!this.state.gameEnabled) { return };
         if (this.state.board[index] !== '') { message.warning(lang[localStorage.getItem('lang')].seatTakenMessageWarning); return };
 
@@ -34,6 +46,21 @@ class TicTacToe extends React.Component {
 
         this.checkGameStatus('X');
     }
+
+    onFieldClickTwoPlayers(index) {
+        if (!this.state.gameEnabled) { return };
+        if (this.state.board[index] !=="") { message.warning(lang[localStorage.getItem('lang')].seatTakenMessageWarning); return };
+        let selectedPlayer = this.state.turn % 2 === 0 ? this.state.player1 : this.state.player2;
+        let board = this.state.board;
+        board[index] = selectedPlayer;
+        let turn = this.state.turn + 1;
+        this.setState({
+            board,
+            turn
+        });
+        this.checkGameStatus(selectedPlayer);
+    }
+
 
     computerTurn() {
         let { board } = this.state
@@ -123,7 +150,6 @@ class TicTacToe extends React.Component {
   
 
     resetGame() {
-        console.log('reset');
         this.setState({
             turn: 0,
             board: [
@@ -156,7 +182,7 @@ class TicTacToe extends React.Component {
                     <div className="game-board">
                         {
                             this.state.board.map((field,key) => {
-                                return <div className="game-board--field" key={key} onClick={this.onFieldClick.bind(this,key)}>
+                                return <div className="game-board--field" key={key} onClick={this.selectGameMode.bind(this,key)}>
                                     <div className="game-board--content">{field}</div>
                                 </div>
                             })

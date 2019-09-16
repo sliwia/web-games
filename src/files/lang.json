@@ -16,6 +16,8 @@
         "stopButton":"Stop gry",
         "fullScreenTooltip":"Pełny ekran",
         "defaultSettingsButton":"Przywróć ustawienia domyślne",
+        "settingsTicTacToeTitle": "Ustawienia - Kółko krzyżyk",
+        "numberOfPlayersTitle": "Liczba graczy",
         "settingsPaddleGameTitle":"Ustawienia - Paletka",
         "speedGameTitle":"Prędkość gry",
         "languageTooltip": "Język"
@@ -37,6 +39,8 @@
         "stopButton":"Stop game",
         "fullScreenTooltip":"Full screen",
         "defaultSettingsButton":"Restore default settings",
+        "settingsTicTacToeTitle": "Settings - Tic Tac toe",
+        "numberOfPlayersTitle": "Number of players",
         "settingsPaddleGameTitle":"Settings - Paddle Game",
         "speedGameTitle":"Game speed",
         "languageTooltip": "Language"

@@ -7,10 +7,16 @@ class Settings extends React.Component {
   constructor() {
     super();
     this.state = {
-      speedValue: 0
+      speedValue: 0,
+      numberOfPlayers: 'onePlayer'
     }
+
     if (!localStorage.getItem('gameSpeed')) {
       localStorage.setItem('gameSpeed', '30');
+    }
+
+    if (!localStorage.getItem('numberOfPlayers')) {
+      localStorage.setItem('numberOfPlayers', 'onePlayer');
     }
   }
 
@@ -21,22 +27,28 @@ class Settings extends React.Component {
 
   }
 
-  handleChange = speedValue => {
+  handleChangeSpeed = speedValue => {
     localStorage.setItem('gameSpeed', speedValue);
     this.setState({ speedValue });
   };
 
+  handleChangePlayers  = checkedRadio => {
+    localStorage.setItem('numberOfPlayers', checkedRadio.target.value);
+    this.setState({numberOfPlayers: checkedRadio.target.value}) 
+  };
+
 
   render() {
+    let defaultValue = localStorage.getItem('numberOfPlayers')
     return (
       <div className="container settings-container">
         <div className="settings-frame">
-          <h1>Ustawiania gry - kółko krzyżyk</h1>
+          <h1>{ lang[localStorage.getItem('lang')].settingsTicTacToeTitle }</h1>
           <div>
-              <h3>Wybierz liczbę graczy</h3>
-              <Radio.Group defaultValue="a" size="large" disabled>
-                  <Radio.Button value="a">1</Radio.Button>
-                  <Radio.Button value="b">2</Radio.Button>
+              <h3>{ lang[localStorage.getItem('lang')].numberOfPlayersTitle }</h3>
+              <Radio.Group onChange={ this.handleChangePlayers } defaultValue={defaultValue} size="large">
+                  <Radio.Button value="onePlayer">1</Radio.Button>
+                  <Radio.Button value="twoPlayers">2</Radio.Button>
               </Radio.Group>
           </div>
         </div>
@@ -45,7 +57,7 @@ class Settings extends React.Component {
           <div>
               <h3>{ lang[localStorage.getItem('lang')].speedGameTitle }</h3>
                   <div className="icon-wrapper">
-                  <Slider onChange={this.handleChange} value={localStorage.getItem('gameSpeed')} />
+                  <Slider onChange={this.handleChangeSpeed} value={localStorage.getItem('gameSpeed')} />
               </div> 
           </div>
         </div>
