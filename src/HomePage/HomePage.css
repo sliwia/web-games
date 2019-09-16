@@ -15,3 +15,22 @@
     text-shadow: 1px 1px 5px black;
     margin: 0 150px 50px 150px;
 }
+
+.home-container Button {
+    width: 150px;
+    height: 25px;
+    margin: 0 0 10px 10px;
+
+}
+
+.map-modal {
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.map-modal-hide {
+    display: none;
+}
