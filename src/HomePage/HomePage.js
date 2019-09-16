@@ -10,25 +10,31 @@ class HomePage extends React.Component {
     constructor() {
         super();
         this.state={
-            isShowMap:false
+            isShowMap:false,
+            latitude: null,
+            longitude:null
         }
 
     }
 
-    getLocation() {
+    toggleShowMap() {
         navigator.geolocation.getCurrentPosition(function(position) {
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
+            // const latitude = position.coords.latitude;
+            // const longitude = position.coords.longitude;
+            this.setState({
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+                isShowMap: !this.state.isShowMap
+            })
             
         });
-       
     }
 
-    toggleShowMap() {
-        this.setState({
-            isShowMap: !this.state.isShowMap
-        })
-      }
+    // toggleShowMap() {
+    //     this.setState({
+    //         isShowMap: !this.state.isShowMap
+    //     })
+    //   }
     
     render() {
         return (

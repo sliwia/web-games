@@ -24,7 +24,6 @@ class TicTacToe extends React.Component {
 
     selectGameMode (index) {
         let nbOfPlayer = localStorage.getItem('numberOfPlayers');
-        console.log('nbOfPlayer: ',nbOfPlayer)
         if (nbOfPlayer==='onePlayer') {
             this.onFieldClickOnePlayer(index);
         } else {
