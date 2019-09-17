@@ -50,7 +50,7 @@ class App extends React.Component {
             </Menu.Item>  
             <Menu.Item>
               <Link to="/tictactoe">
-                <Icon type="table" />
+              <Icon type="number" />
                 {lang[localStorage.getItem('lang')].menuTicTacToe}
               </Link>
             </Menu.Item>

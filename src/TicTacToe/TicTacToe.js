@@ -185,7 +185,7 @@ class TicTacToe extends React.Component {
                             })
                         }
                     </div>
-                    <Button onClick={this.resetGame.bind(this)} type="primary">{lang[localStorage.getItem('lang')].resetGameButton}</Button>
+                    <Button onClick={this.resetGame.bind(this)} type="primary"><Icon type="reload" /> {lang[localStorage.getItem('lang')].resetGameButton}</Button>
                 </div>
             </div>
         );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Button, Icon } from 'antd';
 import './HomePage.css';
 import lang from '../files/lang.json';
 import MapContainer from '../MapContainer/MapContainer';
@@ -30,7 +30,7 @@ class HomePage extends React.Component {
             <>
             <div className="home-container">   
                 <h1>{lang[localStorage.getItem('lang')].homeTitle}</h1>
-                <Button type="primary" onClick={this.toggleShowMap.bind(this)}>Moja lokalizacja</Button> 
+                <Button type="primary" onClick={this.toggleShowMap.bind(this)}><Icon type="environment" />Moja lokalizacja</Button> 
                 <div className={this.state.isShowMap ? "map-modal": "map-modal-hide"}>
                     { this.state.isShowMap ? <MapContainer {...this.state} /> : <></>}
                 </div>
