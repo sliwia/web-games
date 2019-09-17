@@ -13,7 +13,7 @@ class MapContainer extends React.Component {
     }
 
     componentDidMount() {
-      let myMap = L.map('mapId', {
+      let myMap = L.map('map-id', {
         center: [this.coordinate.latitude, this.coordinate.longitude],
         zoom: 15,
         layers: [
@@ -28,7 +28,7 @@ class MapContainer extends React.Component {
     }
   
     render() {
-        return <div id="mapId" className="map-container"></div>
+        return <div id="map-id" className="map-container"></div>
       }
 }
     

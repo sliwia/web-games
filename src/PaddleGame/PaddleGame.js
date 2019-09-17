@@ -181,7 +181,7 @@ class PaddleGame extends React.Component {
           <Button 
             type="primary" 
             className="btn-start-stop-reset" 
-            onClick={this.resetScore.bind(this)}>{lang[localStorage.getItem('lang')].resetGameButton}
+            onClick={this.resetScore.bind(this)}><Icon type="reload" />{lang[localStorage.getItem('lang')].resetGameButton}
           </Button>
         </div>
         <canvas 
