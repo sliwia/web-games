@@ -69,7 +69,6 @@ class PaddleGame extends React.Component {
     if(this.game.ballY > this.game.gameBoard.height) {
       this.resetBall();
       this.setState({bounces: 0})
-
     }
   
     let paddleTopEdgeY = this.game.gameBoard.height - this.game.paddleDistFromEdge;
@@ -84,7 +83,6 @@ class PaddleGame extends React.Component {
         this.game.ballSpeedY *= -1;
         this.setState({bounces: this.state.bounces + 1} );
         this.setHighScore();
-         
         }
   }
 
@@ -148,7 +146,6 @@ class PaddleGame extends React.Component {
     })
   }
 
-
   render() {
     let startStopGameBtn;
 
@@ -198,5 +195,6 @@ class PaddleGame extends React.Component {
     );
   } 
 }
+
 
 export default PaddleGame;

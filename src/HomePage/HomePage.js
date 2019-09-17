@@ -5,7 +5,6 @@ import lang from '../files/lang.json';
 import MapContainer from '../MapContainer/MapContainer';
 
 
-
 class HomePage extends React.Component {
     constructor() {
         super();
@@ -14,27 +13,17 @@ class HomePage extends React.Component {
             latitude: null,
             longitude:null
         }
-
     }
 
     toggleShowMap() {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            // const latitude = position.coords.latitude;
-            // const longitude = position.coords.longitude;
+        navigator.geolocation.getCurrentPosition((position) => {
             this.setState({
-                latitude: position.coords.latitude,
-                longitude: position.coords.longitude,
-                isShowMap: !this.state.isShowMap
-            })
-            
+            isShowMap: !this.state.isShowMap,
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+            })   
         });
     }
-
-    // toggleShowMap() {
-    //     this.setState({
-    //         isShowMap: !this.state.isShowMap
-    //     })
-    //   }
     
     render() {
         return (
@@ -43,15 +32,13 @@ class HomePage extends React.Component {
                 <h1>{lang[localStorage.getItem('lang')].homeTitle}</h1>
                 <Button type="primary" onClick={this.toggleShowMap.bind(this)}>Moja lokalizacja</Button> 
                 <div className={this.state.isShowMap ? "map-modal": "map-modal-hide"}>
-                    { <MapContainer  />}
+                    { this.state.isShowMap ? <MapContainer {...this.state} /> : <></>}
                 </div>
             </div>
-            
-            
-            
             </>
         );
     }
 }
+
 
 export default HomePage;

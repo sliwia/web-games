@@ -3,6 +3,7 @@ import { Slider, Radio, Button } from 'antd';
 import './Settings.css';
 import lang from '../files/lang.json';
 
+
 class Settings extends React.Component {
   constructor() {
     super();
@@ -23,12 +24,9 @@ class Settings extends React.Component {
   setDefaultSettings(){
     localStorage.setItem("highScore", 0);
     localStorage.setItem('gameSpeed', 30);
-    //localStorage.setItem('numberOfPlayers', 'onePlayer')
     this.setState({ 
       speedValue:30,
-      //numberOfPlayers: 'onePlayer'
     });
-
   }
 
   handleChangeSpeed = speedValue => {
@@ -46,6 +44,7 @@ class Settings extends React.Component {
     let defaultValue = localStorage.getItem('numberOfPlayers')
     return (
       <div className="container settings-container">
+
         <div className="settings-frame">
           <h1>{ lang[localStorage.getItem('lang')].settingsTicTacToeTitle }</h1>
           <div>
@@ -56,6 +55,7 @@ class Settings extends React.Component {
               </Radio.Group>
           </div>
         </div>
+
         <div className="settings-frame">
           <h1>{ lang[localStorage.getItem('lang')].settingsPaddleGameTitle }</h1>
           <div>
@@ -71,5 +71,6 @@ class Settings extends React.Component {
     );
   } 
 }
+
 
 export default Settings;

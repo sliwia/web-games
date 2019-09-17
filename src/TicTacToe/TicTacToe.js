@@ -174,7 +174,6 @@ class TicTacToe extends React.Component {
     
     render() {
         return (
-
             <div className="game-board-container">
                 <div className="container">
                     <div className="game-board">
@@ -186,14 +185,12 @@ class TicTacToe extends React.Component {
                             })
                         }
                     </div>
-
                     <Button onClick={this.resetGame.bind(this)} type="primary">{lang[localStorage.getItem('lang')].resetGameButton}</Button>
                 </div>
             </div>
-            
         );
     }
-  
 }
+
 
 export default TicTacToe;

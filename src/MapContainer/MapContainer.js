@@ -2,14 +2,16 @@ import React from 'react'
 import L from 'leaflet';
 import './MapContainer.css';
 
+
 class MapContainer extends React.Component {
     constructor(props) {
         super(props);
         this.coordinate = {
-            latitude: 51.226021,
-            longitude: 22.604661
+            latitude: this.props.latitude,
+            longitude: this.props.longitude
         }
     }
+
     componentDidMount() {
       this.map = L.map('map', {
         center: [this.coordinate.latitude, this.coordinate.longitude],
@@ -20,13 +22,15 @@ class MapContainer extends React.Component {
           }),
         ]
       });
-      L.marker([this.coordinate.latitude, this.coordinate.longitude]).addTo(this.map);
+
+      let marker = L.marker([this.coordinate.latitude, this.coordinate.longitude]).addTo(this.map);
+      marker.bindPopup("<b>Moje miejsce na mapie :)</b>").openPopup();
     }
   
     render() {
-      return <div id="map" className="map-container"></div>
-    }
-  }
+        return <div id="map" className="map-container"></div>
+      }
+}
     
 
 export default MapContainer;
