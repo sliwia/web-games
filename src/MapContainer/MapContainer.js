@@ -13,22 +13,22 @@ class MapContainer extends React.Component {
     }
 
     componentDidMount() {
-      this.map = L.map('map', {
+      let myMap = L.map('mapId', {
         center: [this.coordinate.latitude, this.coordinate.longitude],
-        zoom: 17,
+        zoom: 15,
         layers: [
           L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           }),
         ]
       });
-
-      let marker = L.marker([this.coordinate.latitude, this.coordinate.longitude]).addTo(this.map);
+     
+      let marker = L.marker([this.coordinate.latitude, this.coordinate.longitude]).addTo(myMap);
       marker.bindPopup("<b>Moje miejsce na mapie :)</b>").openPopup();
     }
   
     render() {
-        return <div id="map" className="map-container"></div>
+        return <div id="mapId" className="map-container"></div>
       }
 }
     
