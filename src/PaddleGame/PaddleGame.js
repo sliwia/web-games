@@ -45,12 +45,15 @@ class PaddleGame extends React.Component {
     this.game.gameBoard = this.refs.canvas;
     this.game.context = this.refs.canvas.getContext('2d');
     let speedValue = localStorage.getItem('gameSpeed'); 
-    this.setState({gameRefreshInterval: setInterval(this.updateAll, this.game.gameSpeed/speedValue)});
+    // this.setState({gameRefreshInterval: setInterval(this.updateAll, this.game.gameSpeed/speedValue)});
+    clearInterval(this.state.gameRefreshInterval);
+    this.setState({gameRefreshInterval: null})
     this.refs.canvas.addEventListener('mousemove', this.updateMousePosition)
   }
 
   componentWillUnmount() {
     clearInterval(this.state.gameRefreshInterval);
+    this.setState({gameRefreshInterval: null})
   }
 
   updateDirection() {
@@ -151,7 +154,7 @@ class PaddleGame extends React.Component {
 
     if (!this.state.gameRefreshInterval) {
       startStopGameBtn = <Button 
-        className="btn-start-stop-reset" 
+        className="btn-start-stop-reset pulse-effect" 
         type="primary" 
         onClick={this.startStopGame.bind(this)}>
           <Icon type="play-circle" />{lang[localStorage.getItem('lang')].startButton}
