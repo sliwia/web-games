@@ -4,9 +4,9 @@
 }
 
 .game-board { 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
   
 .game-board--field {
@@ -49,7 +49,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .game-board--field:hover {
-        background: rgb(163, 162, 162);
-      }
+  .game-board--field:hover {
+      background: rgb(163, 162, 162);
+    }
 }

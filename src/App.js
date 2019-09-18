@@ -20,10 +20,10 @@ class App extends React.Component {
     ]
     
     if (!localStorage.getItem('lang') || 
-    typeof localStorage.getItem('lang') !== 'string' ||
-    langs.indexOf(localStorage.getItem('lang') ===-1)) {
-      localStorage.setItem('lang', 'en');
-    }
+      typeof localStorage.getItem('lang') !== 'string' ||
+      langs.indexOf(localStorage.getItem('lang') ===-1)) {
+        localStorage.setItem('lang', 'en');
+      }
 
     this.state = {
       lang: null

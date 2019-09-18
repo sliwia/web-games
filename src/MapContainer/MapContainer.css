@@ -1,6 +1,6 @@
 .map-container {
-    position: fixed;
-    height: 300px;
-    width: 300px;
-    z-index: 100;
+  position: fixed;
+  height: 300px;
+  width: 300px;
+  z-index: 100;
 }

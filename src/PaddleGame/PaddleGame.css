@@ -1,40 +1,40 @@
 .paddle-game-container {
-    display: flex;
-    justify-content: space-between;
-    height: 92vh;
-    padding: 10px 23% 2% 2%; 
+  display: flex;
+  justify-content: space-between;
+  height: 92vh;
+  padding: 10px 23% 2% 2%; 
 }
 
 .paddle-game-container h1, h2 {
-    color: white;
+  color: white;
 }
 
 .canvas {
-    cursor: none;
-    border-radius: 10px;
-    left: 100px;
-    z-index: 1;
+  cursor: none;
+  border-radius: 10px;
+  left: 100px;
+  z-index: 1;
 }
 
 .canvas-full-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
 }
 
 .btn-full-screen {
-    position: fixed;
-    top: 65px;
-    right: 10px;
-    font-size: 20px;
+  position: fixed;
+  top: 65px;
+  right: 10px;
+  font-size: 20px;
 }
 
 .btn-start-stop-reset {
-    display: block;
-    width: 220px;
-    margin-bottom: 10px;
+  display: block;
+  width: 220px;
+  margin-bottom: 10px;
 }
 

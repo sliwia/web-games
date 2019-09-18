@@ -29,7 +29,7 @@ class MapContainer extends React.Component {
   
     render() {
         return <div id="map-id" className="map-container"></div>
-      }
+    }
 }
     
 

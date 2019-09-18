@@ -73,10 +73,10 @@ class TicTacToe extends React.Component {
         let computerFieldSelected = _getRandomInt();
 
         if (board[computerFieldSelected] === '') {
-        board[computerFieldSelected] = 'O'
+            board[computerFieldSelected] = 'O'
         } else if (this.state.gameEnabled && this.state.board.indexOf('') >= 0) {
-        this.computerTurn();
-        return;
+            this.computerTurn();
+            return;
         } else return;
 
         this.setState({
@@ -91,12 +91,12 @@ class TicTacToe extends React.Component {
         if (!this.state.gameEnabled) { return }
 
         for (let i = 0; i <= 6; i = i + 3) {
-        if (!!this.state.board[i] && !!this.state.board[i+1] && !!this.state.board[i+2]) {
-            if (this.state.board[i] === this.state.board[i+1] && this.state.board[i+1] === this.state.board[i+2]) {
-                this.endGame(selectedPlayer);
-                return;
+            if (!!this.state.board[i] && !!this.state.board[i+1] && !!this.state.board[i+2]) {
+                if (this.state.board[i] === this.state.board[i+1] && this.state.board[i+1] === this.state.board[i+2]) {
+                    this.endGame(selectedPlayer);
+                    return;
+                }
             }
-        }
         }
 
         for (let i = 0; i < 3; i++) {
@@ -132,17 +132,17 @@ class TicTacToe extends React.Component {
 
     endGame (selectedPlayer) {
         if (selectedPlayer) {
-        this.setState({
-            isVisibleModal: true
-        });
-        this.showModal(selectedPlayer)
+            this.setState({
+                isVisibleModal: true
+            });
+            this.showModal(selectedPlayer)
         } else if (this.state.gameEnabled && this.state.turn > 7) {
-        message.info(lang[localStorage.getItem('lang')].drawGameMessageInfo);
-        return;
+            message.info(lang[localStorage.getItem('lang')].drawGameMessageInfo);
+            return;
         }
 
         this.setState({
-        gameEnabled: false,
+            gameEnabled: false,
         })       
     }
   

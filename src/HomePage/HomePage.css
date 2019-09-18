@@ -1,36 +1,36 @@
 .home-container {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    height: 92vh;
-    background-image: url('../img/tlo2.jpg');
-    background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 92vh;
+  background-image: url('../img/tlo2.jpg');
+  background-size: cover;
 }
 
 .home-container h1 {
-    font-size: 18px; 
-    font-style: italic; 
-    font-size: 50px; 
-    color:white;
-    text-shadow: 1px 1px 5px black;
-    margin: 0 150px 50px 150px;
+  font-size: 18px; 
+  font-style: italic; 
+  font-size: 50px; 
+  color:white;
+  text-shadow: 1px 1px 5px black;
+  margin: 0 150px 50px 150px;
 }
 
 .home-container Button {
-    width: 150px;
-    height: 25px;
-    margin: 0 0 10px 10px;
+  width: 150px;
+  height: 25px;
+  margin: 0 0 10px 10px;
 
 }
 
 .map-modal {
-    position: fixed;
-    top: 60px;
-    right: 10px;
-    width: 300px;
-    height: 300px;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  width: 300px;
+  height: 300px;
 }
 
 .map-modal-hide {
-    display: none;
+  display: none;
 }

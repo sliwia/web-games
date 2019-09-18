@@ -21,7 +21,7 @@ class Settings extends React.Component {
     }
   }
 
-  setDefaultSettings(){
+  setDefaultSettings() {
     localStorage.setItem("highScore", 0);
     localStorage.setItem('gameSpeed', 30);
     this.setState({ 
@@ -65,8 +65,8 @@ class Settings extends React.Component {
               </div> 
           </div>
         </div>
-        <Button onClick={this.setDefaultSettings.bind(this)} type="primary">{ lang[localStorage.getItem('lang')].defaultSettingsButton }</Button>
         
+        <Button onClick={this.setDefaultSettings.bind(this)} type="primary">{ lang[localStorage.getItem('lang')].defaultSettingsButton }</Button>
       </div>
     );
   } 
