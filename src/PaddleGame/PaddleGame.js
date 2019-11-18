@@ -8,7 +8,6 @@ class PaddleGame extends React.Component {
     super();
 
     this.game = {
-      gameSpeed: 1000,
       gameBoard: null,
       context: null,
       ballX: 100,
@@ -45,8 +44,7 @@ class PaddleGame extends React.Component {
     this.game.gameBoard = this.refs.canvas;
     this.game.context = this.refs.canvas.getContext('2d');
     let speedValue = localStorage.getItem('gameSpeed'); 
-    // this.setState({gameRefreshInterval: setInterval(this.updateAll, this.game.gameSpeed/speedValue)});
-    clearInterval(this.state.gameRefreshInterval);
+   
     this.setState({gameRefreshInterval: null})
     this.refs.canvas.addEventListener('mousemove', this.updateMousePosition)
   }
@@ -134,7 +132,8 @@ class PaddleGame extends React.Component {
 
   startStopGame() {
     if (!this.state.gameRefreshInterval) {
-      this.setState({gameRefreshInterval: setInterval(this.updateAll, this.game.gameSpeed/30)});
+
+      this.setState({gameRefreshInterval: setInterval(this.updateAll, 1000/localStorage.getItem('gameSpeed'))});
     } else {
       clearInterval(this.state.gameRefreshInterval);
       this.setState({gameRefreshInterval: null})
