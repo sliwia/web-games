@@ -45,6 +45,9 @@
 .single-field:hover {
   background: rgba(128, 128, 128, 0.5);
 }
+.single-field:active {
+  background: rgba(128, 128, 128, 0.7);
+}
 
 .game-space {
   display:flex;
