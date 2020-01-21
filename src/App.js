@@ -7,7 +7,9 @@ import HomePage from './HomePage/HomePage';
 import TicTacToe from './TicTacToe/TicTacToe';
 import PaddleGame from './PaddleGame/PaddleGame'
 import Settings from './Settings/Settings';
+
 import lang from '../src/files/lang.json';
+import PaperScissorsRock from './PaperScissorsRock/PaperScissorsRock';
 
 
 class App extends React.Component {
@@ -37,6 +39,7 @@ class App extends React.Component {
 
   render() {
     let defaultValue = localStorage.getItem('lang')
+    const iconsStyle = { fontSize: '20px'}
     return (
       <>
       <Router>
@@ -44,34 +47,43 @@ class App extends React.Component {
           <Menu mode="horizontal" className="menu-main-view">
             <Menu.Item>
               <Link to="/">
-                <Icon type="home" />
+                <Icon type="home" style={iconsStyle} />
                 {lang[localStorage.getItem('lang')].menuHome}
               </Link>
             </Menu.Item>  
             <Menu.Item>
               <Link to="/tictactoe">
-              <Icon type="number" />
+              <Icon type="number" style={iconsStyle} />
                 {lang[localStorage.getItem('lang')].menuTicTacToe}
               </Link>
             </Menu.Item>
             <Menu.Item >
               <Link to="/paddlegame">
-                <Icon type="dribbble" />
+                <Icon type="dribbble" style={iconsStyle} />
                 {lang[localStorage.getItem('lang')].menuPaddleGame}
               </Link>
             </Menu.Item>
             <Menu.Item >
+              <Link to="/paperscissorsrock">
+                <Icon type="scissor" style={iconsStyle} />
+                {lang[localStorage.getItem('lang')].menuPaperScissorsRock}
+              </Link>
+            </Menu.Item>
+            <Menu.Item >
               <Link to="/settings">
-                <Icon type="setting" />
+                <Icon type="setting" style={iconsStyle} />
                 {lang[localStorage.getItem('lang')].menuSettings}
               </Link>
             </Menu.Item>
           </Menu>
         </div>
-            
+        <div>
+          
+        </div>
         <Route path="/" exact component={ HomePage } />
         <Route path="/tictactoe" component={ TicTacToe } />
         <Route path="/paddlegame" component={ PaddleGame } />
+        <Route path="/paperscissorsrock" component={ PaperScissorsRock } />
         <Route path="/settings" component={ Settings } />
       </Router>
 

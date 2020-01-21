@@ -43,7 +43,6 @@ class PaddleGame extends React.Component {
   componentDidMount() {
     this.game.gameBoard = this.refs.canvas;
     this.game.context = this.refs.canvas.getContext('2d');
-    let speedValue = localStorage.getItem('gameSpeed'); 
    
     this.setState({gameRefreshInterval: null})
     this.refs.canvas.addEventListener('mousemove', this.updateMousePosition)

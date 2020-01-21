@@ -175,19 +175,20 @@ class TicTacToe extends React.Component {
   render() {
     return (
       <div className="game-board-container">
-        <div className="container">
           <div className="game-board">
             {
               this.state.board.map((field,key) => {
-                return <div className="game-board--field" key={key} onClick={this.selectGameMode.bind(this,key)}>
+                return (
+                <div className="game-board--field" key={key} onClick={this.selectGameMode.bind(this,key)}>
                   <div className="game-board--content">{field}</div>
-                </div>
+                </div>)
               })
             }
-          </div>
-          <Button onClick={this.resetGame.bind(this)} type="primary"><Icon type="reload" /> {lang[localStorage.getItem('lang')].resetGameButton}</Button>
         </div>
+        <Button onClick={this.resetGame.bind(this)} type="primary"><Icon type="reload" /> {lang[localStorage.getItem('lang')].resetGameButton}</Button>
+          
       </div>
+      
     );
   }
 }

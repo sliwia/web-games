@@ -1,0 +1,92 @@
+.board-paper-scissor-rock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.paper-scissor-rock-container h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+.input-set-name {
+  height: 20px;
+  padding: 0 200px;
+}
+
+.player-space {
+  display:flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  height: 120px;
+  width: 100%;
+  padding: 0 200px
+}
+
+.single-field {
+  width: 120px;
+  height: 100%;
+  border:2px solid gray;
+  cursor: pointer;
+}
+
+.single-field img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px
+}
+
+.single-field:hover {
+  background: rgba(128, 128, 128, 0.5);
+}
+
+.game-space {
+  display:flex;
+  justify-content: space-between;
+
+  height: 150px;
+  width: 100%;
+  border:2px solid gray;
+  cursor: none;
+  padding: 5px 70px
+
+}
+
+.game-space .single-field {
+  border:none;
+  cursor: none;
+}
+.text-vs {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-size: 60px;
+  font-weight: bold;
+}
+.game-space .single-field:hover {
+  background: none;
+}
+
+.board-show {
+  visibility:visible;
+}
+
+.board-hide {
+  visibility:hidden;
+}
+
+.names-players{
+  display: flex;
+  justify-content: space-between;
+  color:white;
+  font-size: 30px;
+  font-weight: bold;
+  margin:10px 70px
+}
