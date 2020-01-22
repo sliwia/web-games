@@ -1,3 +1,22 @@
+# Platform games
+
+The project includes: 
+  * Home Page  (additionally - your current location on the map, )
+  * Tic Tac Toe (game)
+  * Paddle Game (game)
+  * Paper Scissors Rock (game)
+  * Settings
+
+
+## Technologies
+Project is created with:
+  * React (version ^16.9.0)
+  * React Router (version^5.0.1)
+  * Antd (version ^0.19.0)
+  * Leaflet and React Leaflet (version ^1.5.1)
+
+## Run application 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -68,8 +87,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 
-### Technologies
-
-Ant.Design https://ant.design
-
-Axios https://www.npmjs.com/package/axios
