@@ -2,9 +2,9 @@
 
 The project includes: 
   * Home Page  (additionally - your current location on the map, )
-  * TicTacToe (game)
-  * PaddleGame (game)
-  * PaperScissorsRock (game)
+  * Tic Tac Toe (game)
+  * Paddle Game (game)
+  * Paper Scissors Rock (game)
   * Settings
 
 
