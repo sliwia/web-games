@@ -30,7 +30,7 @@ class HomePage extends React.Component {
       <>
       <div className="home-container">   
         <h1>{lang[localStorage.getItem('lang')].homeTitle}</h1>
-        <Button type="primary" onClick={this.toggleShowMap.bind(this)}><Icon type="environment" />Moja lokalizacja</Button> 
+        <Button type="primary" onClick={this.toggleShowMap.bind(this)}><Icon type="environment" />{lang[localStorage.getItem('lang')].myLocationBtnText}</Button> 
         <div className={this.state.isShowMap ? "map-modal": "map-modal-hide"}>
           { this.state.isShowMap ? <MapContainer {...this.state} /> : <></>}
         </div>

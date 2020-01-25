@@ -1,4 +1,4 @@
-.board-paper-scissor-rock{
+.board-paper-scissor-rock {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +10,7 @@
   align-items: center;
   font-size: 30px;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 .input-set-name {
   height: 20px;
@@ -92,4 +92,20 @@
   font-size: 30px;
   font-weight: bold;
   margin:10px 70px
+}
+
+.paper-scissor-rock-container h3:last-child{
+  margin-top: 10px;
+}
+
+.paper-scissor-rock-container .ant-input-search-enter-button + .ant-input-group-addon .ant-input-search-button, .ant-input-search-enter-button input + .ant-input-group-addon .ant-input-search-button {
+  color: #fff;
+  background-color: rgba(51, 50, 50, 0.9);
+  border-color: gray;
+  box-shadow: 1px 1px 1px #a0c8ee
+}
+
+.paper-scissor-rock-container .ant-input-search-enter-button + .ant-input-group-addon .ant-input-search-button, .ant-input-search-enter-button input + .ant-input-group-addon .ant-input-search-button:hover {
+  color:rgb(41, 40, 40);
+  background-color: #a0c8ee8f;
 }

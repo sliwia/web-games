@@ -19,13 +19,17 @@
         "setNamePaperScissorsRock": "Podaj swoje imię:",
         "placeholderPaperScissorsRock": "Wpisz imię",
         "playText":"Graj !",
-        "opponentText":"Gracz 2",
+        "scoreTextTitle":"Wygrał gracz ",
+        "tieGameTextTitle":"REMIS!",
         "defaultSettingsButton": "Przywróć ustawienia domyślne",
         "settingsTicTacToeTitle": "Ustawienia - Kółko krzyżyk",
         "numberOfPlayersTitle": "Liczba graczy",
         "settingsPaddleGameTitle": "Ustawienia - Paletka",
         "speedGameTitle": "Prędkość gry",
-        "languageTooltip": "Język"
+        "settingsPaperScissorsRockTitle": "Ustawienia - Papier nożyce kamień",
+        "languageTooltip": "Język",
+        "myLocationBtnText": "Moja lokalizacja",
+        "popupText": "Twoje miejsce na mapie :)"
     },
     "en": {
         "menuHome": "Home Page",
@@ -35,7 +39,7 @@
         "menuSettings": "Settings",
         "homeTitle": "Welcome to the platform games!",
         "resetGameButton": "Reset game",
-        "drawGameMessageInfo": "DRAW! You reset the game and start again.",
+        "drawGameMessageInfo": "Tie game! You reset the game and start again.",
         "seatTakenMessageWarning": "This seat is taken, choose again.",
         "winnerGameMessageInfoPart1": "! CONGRATULATIONS !",
         "winnerGameMessageInfoPart2": "The winner is:",
@@ -47,12 +51,16 @@
         "setNamePaperScissorsRock": "State your name:",
         "placeholderPaperScissorsRock": "Enter your name",
         "playText":"Play !",
-        "opponentText":"Player 2",
+        "scoreTextTitle":"The winner is ",
+        "tieGameTextTitle":"Tie game!",
         "defaultSettingsButton":"Restore default settings",
         "settingsTicTacToeTitle": "Settings - Tic Tac toe",
         "numberOfPlayersTitle": "Number of players",
         "settingsPaddleGameTitle": "Settings - Paddle Game",
         "speedGameTitle": "Game speed",
-        "languageTooltip": "Language"
+        "settingsPaperScissorsRockTitle": "Settings - Paper Scissors Rock",
+        "languageTooltip": "Language",
+        "myLocationBtnText": "My location",
+        "popupText": "Your place on the map :)"
     }
 }

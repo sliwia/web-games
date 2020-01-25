@@ -14,6 +14,7 @@ class PaperScissorsRock extends React.Component {
     super();
     this.state={
       playerName:'',
+      playerComputerName:'Player 2',
       firstFeat:{
         img: RockImg,
         weightElement:1
@@ -27,15 +28,17 @@ class PaperScissorsRock extends React.Component {
         weightElement:3
       },
       yourChoice:'',
-      computerChoice: ''
-    }
+      computerChoice: '',
+      scoreText:''
+    };
+    
   }
 
   setPlayerName = (name) => {
     if (name!==''){
       this.setState({playerName:name})
     } else {
-      message.error('Nie wybrano imienia gracza!');
+      message.error(lang[localStorage.getItem('lang')].placeholderPaperScissorsRock);
     }
 
     
@@ -58,8 +61,51 @@ class PaperScissorsRock extends React.Component {
     }else if (computer===3){
       this.setState({computerChoice:this.state.thirdFeat.img})
     }
+    this.generateScoreText(selectedElement,computer)
 
   }
+
+  generateScoreText = (playerFirst, playerSecond) =>{
+    let scoreText;
+    let scoreTitleText = lang[localStorage.getItem('lang')].scoreTextTitle;
+    // tie
+    if (playerFirst===playerSecond) {
+      scoreText= lang[localStorage.getItem('lang')].tieGameTextTitle;
+      this.setState({scoreText})
+      return
+    } else if (playerFirst===1 && playerSecond===2) {
+      //rock and paper
+      scoreText= `${scoreTitleText} ${this.state.playerComputerName} !`
+      this.setState({scoreText})
+      return
+    } else if (playerFirst===1 && playerSecond===3) {
+      //rock and scissors 
+      scoreText= `${scoreTitleText} ${this.state.playerName} !`
+      this.setState({scoreText})
+      return
+    } else if (playerFirst===2 && playerSecond===1) {
+      //paper and rock 
+      scoreText= `${scoreTitleText} ${this.state.playerName} !`
+      this.setState({scoreText})
+      return
+    } else if (playerFirst===2 && playerSecond===3) {
+      //paper and scissors 
+      scoreText= `${scoreTitleText} ${this.state.playerComputerName} !`
+      this.setState({scoreText})
+      return
+    } else if (playerFirst===3 && playerSecond===1) {
+      //scissors and rock 
+      scoreText= `${scoreTitleText} ${this.state.playerComputerName} !`
+      this.setState({scoreText})
+      return
+    }else if (playerFirst===3 && playerSecond===2) {
+      //scissors and paper 
+      scoreText= `${scoreTitleText} ${this.state.playerName} !`
+      this.setState({scoreText})
+      return
+    }
+    this.setState({scoreText})
+  };
 
 
   render() {
@@ -89,12 +135,12 @@ class PaperScissorsRock extends React.Component {
         </div>
         <div className={(this.state.yourChoice!=='') ? "names-players board-show" : "names-players board-hide"}>
           <span>{this.state.playerName}</span>
-          <span>{lang[localStorage.getItem('lang')].opponentText}</span>
+          <span>{this.state.playerComputerName}</span>
         </div>
         
         <div className={(this.state.yourChoice!=='') ? "game-space board-show" : "game-space board-hide"}>
-        <div className="single-field">
-            <img src={this.state.yourChoice} alt="img" width={100} height={100} />
+          <div className="single-field">
+              <img src={this.state.yourChoice} alt="img" width={100} height={100} />
           </div>
           <div className="single-field text-vs">
             <span>VS</span>
@@ -103,12 +149,8 @@ class PaperScissorsRock extends React.Component {
             <img src={this.state.computerChoice} width={100} alt="img" height={100} />
           </div>
         </div>
-        {/* <h3 className={(this.state.yourChoice!=='') ? "board-show" : "board-hide"}>Wygrał: komputer !</h3> */}
+        <h3 className={(this.state.yourChoice!=='' && this.state.scoreText !=='') ? "board-show" : "board-hide"}> {this.state.scoreText}</h3>
         </div>
-        
-        
-
-        
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider, Radio, Button } from 'antd';
+import { Slider, Radio, Button, Input } from 'antd';
 import './Settings.css';
 import lang from '../files/lang.json';
 
@@ -63,6 +63,14 @@ class Settings extends React.Component {
                   <div className="icon-wrapper">
                   <Slider onChange={this.handleChangeSpeed} value={localStorage.getItem('gameSpeed')} />
               </div> 
+          </div>
+        </div>
+
+        <div className="settings-frame">
+          <h1>{ lang[localStorage.getItem('lang')].settingsPaperScissorsRockTitle }</h1>
+          <div>
+              <h3>Player 2</h3>
+                <Input disabled={true} defaultValue="Player 2" placeholder={lang[localStorage.getItem('lang')].placeholderPaperScissorsRock}></Input>
           </div>
         </div>
         
