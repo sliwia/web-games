@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/web-games/static/css/main.d41c1717.chunk.css",
+    "main.js": "/web-games/static/js/main.36180e6a.chunk.js",
+    "main.js.map": "/web-games/static/js/main.36180e6a.chunk.js.map",
+    "runtime-main.js": "/web-games/static/js/runtime-main.791d22e3.js",
+    "runtime-main.js.map": "/web-games/static/js/runtime-main.791d22e3.js.map",
+    "static/css/2.7a1db334.chunk.css": "/web-games/static/css/2.7a1db334.chunk.css",
+    "static/js/2.ac2d640f.chunk.js": "/web-games/static/js/2.ac2d640f.chunk.js",
+    "static/js/2.ac2d640f.chunk.js.map": "/web-games/static/js/2.ac2d640f.chunk.js.map",
+    "index.html": "/web-games/index.html",
+    "precache-manifest.28c277cb93dd380609c2727986d0c60c.js": "/web-games/precache-manifest.28c277cb93dd380609c2727986d0c60c.js",
+    "service-worker.js": "/web-games/service-worker.js",
+    "static/css/2.7a1db334.chunk.css.map": "/web-games/static/css/2.7a1db334.chunk.css.map",
+    "static/css/main.d41c1717.chunk.css.map": "/web-games/static/css/main.d41c1717.chunk.css.map",
+    "static/js/2.ac2d640f.chunk.js.LICENSE": "/web-games/static/js/2.ac2d640f.chunk.js.LICENSE",
+    "static/media/Paper.png": "/web-games/static/media/Paper.a598e059.png",
+    "static/media/Rock.png": "/web-games/static/media/Rock.96c59590.png",
+    "static/media/Scissors.png": "/web-games/static/media/Scissors.5d9a8354.png",
+    "static/media/HomePage.css": "/web-games/static/media/tlo2.fdd4dd06.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.791d22e3.js",
+    "static/css/2.7a1db334.chunk.css",
+    "static/js/2.ac2d640f.chunk.js",
+    "static/css/main.d41c1717.chunk.css",
+    "static/js/main.36180e6a.chunk.js"
+  ]
+}
