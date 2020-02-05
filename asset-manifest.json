@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/web-games/static/css/main.d41c1717.chunk.css",
-    "main.js": "/web-games/static/js/main.36180e6a.chunk.js",
-    "main.js.map": "/web-games/static/js/main.36180e6a.chunk.js.map",
+    "main.js": "/web-games/static/js/main.a48ec3b0.chunk.js",
+    "main.js.map": "/web-games/static/js/main.a48ec3b0.chunk.js.map",
     "runtime-main.js": "/web-games/static/js/runtime-main.791d22e3.js",
     "runtime-main.js.map": "/web-games/static/js/runtime-main.791d22e3.js.map",
     "static/css/2.7a1db334.chunk.css": "/web-games/static/css/2.7a1db334.chunk.css",
     "static/js/2.ac2d640f.chunk.js": "/web-games/static/js/2.ac2d640f.chunk.js",
     "static/js/2.ac2d640f.chunk.js.map": "/web-games/static/js/2.ac2d640f.chunk.js.map",
     "index.html": "/web-games/index.html",
-    "precache-manifest.28c277cb93dd380609c2727986d0c60c.js": "/web-games/precache-manifest.28c277cb93dd380609c2727986d0c60c.js",
+    "precache-manifest.d4104324d013ca1417840668f41ab6d1.js": "/web-games/precache-manifest.d4104324d013ca1417840668f41ab6d1.js",
     "service-worker.js": "/web-games/service-worker.js",
     "static/css/2.7a1db334.chunk.css.map": "/web-games/static/css/2.7a1db334.chunk.css.map",
     "static/css/main.d41c1717.chunk.css.map": "/web-games/static/css/main.d41c1717.chunk.css.map",
@@ -24,6 +24,6 @@
     "static/css/2.7a1db334.chunk.css",
     "static/js/2.ac2d640f.chunk.js",
     "static/css/main.d41c1717.chunk.css",
-    "static/js/main.36180e6a.chunk.js"
+    "static/js/main.a48ec3b0.chunk.js"
   ]
 }

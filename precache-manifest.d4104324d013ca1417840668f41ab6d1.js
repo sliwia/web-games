@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7732c3b936cb9743a223f3ce7cddcf6",
+    "revision": "8b82ce9216a3bcc5e183c04e444eafff",
     "url": "/web-games/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/web-games/static/css/2.7a1db334.chunk.css"
   },
   {
-    "revision": "43f6685011d107d6e173",
+    "revision": "d5cc9b196d36174ce7c9",
     "url": "/web-games/static/css/main.d41c1717.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/web-games/static/js/2.ac2d640f.chunk.js.LICENSE"
   },
   {
-    "revision": "43f6685011d107d6e173",
-    "url": "/web-games/static/js/main.36180e6a.chunk.js"
+    "revision": "d5cc9b196d36174ce7c9",
+    "url": "/web-games/static/js/main.a48ec3b0.chunk.js"
   },
   {
     "revision": "92d9faf316548c682411",
