@@ -28,7 +28,8 @@ class App extends React.Component {
       }
 
     this.state = {
-      lang: null
+      lang: null,
+      currentItem: 'home',
     }
   }
 
@@ -37,6 +38,12 @@ class App extends React.Component {
     this.setState({lang});
   }
 
+  handleClick = e => {
+    this.setState({
+      currentItem: e.key,
+    });
+  };
+
   render() {
     let defaultValue = localStorage.getItem('lang')
     const iconsStyle = { fontSize: '20px'}
@@ -44,32 +51,32 @@ class App extends React.Component {
       <>
       <Router>
         <div className="container-menu"> 
-          <Menu mode="horizontal" className="menu-main-view">
-            <Menu.Item>
+          <Menu mode="horizontal" className="menu-main-view" onClick={this.handleClick} selectedKeys={[this.state.currentItem]}>
+            <Menu.Item key="home">
               <Link to="/">
                 <Icon type="home" style={iconsStyle} />
                 {lang[localStorage.getItem('lang')].menuHome}
               </Link>
             </Menu.Item>  
-            <Menu.Item>
+            <Menu.Item key="tictactoe">
               <Link to="/tictactoe">
               <Icon type="number" style={iconsStyle} />
                 {lang[localStorage.getItem('lang')].menuTicTacToe}
               </Link>
             </Menu.Item>
-            <Menu.Item >
+            <Menu.Item key="paddlegame">
               <Link to="/paddlegame">
                 <Icon type="dribbble" style={iconsStyle} />
                 {lang[localStorage.getItem('lang')].menuPaddleGame}
               </Link>
             </Menu.Item>
-            <Menu.Item >
+            <Menu.Item key="paperscissorsrock">
               <Link to="/paperscissorsrock">
                 <Icon type="scissor" style={iconsStyle} />
                 {lang[localStorage.getItem('lang')].menuPaperScissorsRock}
               </Link>
             </Menu.Item>
-            <Menu.Item >
+            <Menu.Item key="settings">
               <Link to="/settings">
                 <Icon type="setting" style={iconsStyle} />
                 {lang[localStorage.getItem('lang')].menuSettings}

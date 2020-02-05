@@ -2,10 +2,12 @@
   "name": "web-games",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sliwia.github.io/web-games",
   "dependencies": {
     "antd": "^3.22.2",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
+    "gh-pages": "^2.2.0",
     "leaflet": "^1.5.1",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.12",
@@ -19,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
