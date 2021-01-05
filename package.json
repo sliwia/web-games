@@ -5,7 +5,7 @@
   "homepage": "https://sliwia.github.io/web-games",
   "dependencies": {
     "antd": "^3.22.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.2.0",
     "leaflet": "^1.5.1",
